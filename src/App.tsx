@@ -1,10 +1,12 @@
-import { Card } from './components/Card/Card';
-import { Header } from './components/Header/Header';
+import { Header, Card, Footer } from './components';
+import { useTheme } from './context/theme/useTheme';
 
 export function App() {
+  const { theme } = useTheme();
   return (
-    <>
+    <div className={`app app--${theme}`}>
       <Header />
+
       <main>
         <Card title="React">React component card</Card>
 
@@ -12,6 +14,8 @@ export function App() {
 
         <Card title="Vite">Vite component card</Card>
       </main>
-    </>
+
+      <Footer />
+    </div>
   );
 }
