@@ -1,3 +1,10 @@
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
 .app--light {
   background-color: #fff;
   color: #222;
@@ -14,4 +21,9 @@
 
 .app--dark .card {
   background-color: #333;
+}
+
+.card,
+.toggler {
+  border-radius: 10px;
 }

@@ -4,7 +4,7 @@ export function Footer() {
   const { theme } = useTheme();
 
   return (
-    <footer>
+    <footer className="footer">
       <small>Current theme: {theme}</small>
     </footer>
   );
