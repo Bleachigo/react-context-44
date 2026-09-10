@@ -1,3 +1,12 @@
+import { Header } from './components/Header/Header';
+
 export function App() {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <main>
+        <Card title="React"></Card>
+      </main>
+    </>
+  );
 }
