@@ -2,7 +2,7 @@
 
 A minimal React + TypeScript + Vite app demonstrating the React Context API with a light/dark theme toggle.
 
-**Live demo:** [https://your-project-name.vercel.app](https://your-project-name.vercel.app) <!-- TODO: replace with your Vercel deployment URL -->
+**Live demo:** [https://context-44.vercel.app](https://your-project-name.vercel.app) <!-- TODO: replace with your Vercel deployment URL -->
 
 ## Tech Stack
 
