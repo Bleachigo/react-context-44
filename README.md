@@ -1,75 +1,98 @@
-# React + TypeScript + Vite
+# React Context Theme Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal React + TypeScript + Vite app demonstrating the React Context API with a light/dark theme toggle.
 
-Currently, two official plugins are available:
+**Live demo:** [https://your-project-name.vercel.app](https://your-project-name.vercel.app) <!-- TODO: replace with your Vercel deployment URL -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React 19
+- TypeScript
+- Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   ```bash
+   git clone <repository-url>
+   cd context-44
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Install dependencies:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Usage
 
+### Development
+
+Start the local dev server with hot module reloading:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Lint
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Check the code with ESLint:
+
+```bash
+npm run lint
+```
+
+### Production Build
+
+Type-check and build the app for production:
+
+```bash
+npm run build
+```
+
+Output is generated in the `dist/` directory.
+
+### Preview Production Build
+
+Serve the production build locally:
+
+```bash
+npm run preview
+```
+
+## Deployment (Vercel)
+
+This project is ready to deploy on [Vercel](https://vercel.com):
+
+1. Push the repository to GitHub/GitLab/Bitbucket.
+2. Import the project in the [Vercel dashboard](https://vercel.com/new).
+3. Vercel auto-detects the Vite framework preset — no extra configuration is required:
+   - **Build command:** `npm run build`
+   - **Output directory:** `dist`
+4. Deploy, then replace the demo link at the top of this README with your live Vercel URL.
+
+## Performance
+
+`Header`, `Footer`, `ThemeToggle`, and `Card` are wrapped in `React.memo` to avoid unnecessary re-renders of components that consume the theme context or receive stable props.
+
+## Project Structure
 
 ```
+src/
+├── components/
+│   ├── Header/
+│   ├── Card/
+│   ├── Footer/
+│   └── ThemeToggle/
+├── context/
+│   └── theme/       # ThemeContext, ThemeProvider, useTheme hook
+├── App.tsx
+└── main.tsx
+```
+
+## License
+
+Licensed under the MIT License — see [LICENSE.md](./LICENSE.md).
