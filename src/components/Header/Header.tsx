@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { useTheme } from '../../context/theme/useTheme';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 
-export function Header() {
+export const Header = memo(function Header() {
   const { theme } = useTheme();
 
   return (
@@ -12,4 +13,4 @@ export function Header() {
       <ThemeToggle />
     </header>
   );
-}
+});

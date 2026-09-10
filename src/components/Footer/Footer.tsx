@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { useTheme } from '../../context/theme/useTheme';
 
-export function Footer() {
+export const Footer = memo(function Footer() {
   const { theme } = useTheme();
 
   return (
@@ -8,4 +9,4 @@ export function Footer() {
       <small>Current theme: {theme}</small>
     </footer>
   );
-}
+});
